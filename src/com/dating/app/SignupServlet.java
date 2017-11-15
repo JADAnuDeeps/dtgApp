@@ -12,14 +12,14 @@ import java.io.PrintWriter;
 @WebServlet(name = "Signup", urlPatterns = {"/termsAgreement"})
 public class SignupServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        System.out.println("in post");
-        System.out.println("request===" + (request.getParameter("agreement").equalsIgnoreCase("accept")));
+       // System.out.println("in post");
+       // System.out.println("request===" + (request.getParameter("agreement").equalsIgnoreCase("accept")));
         RequestDispatcher rd;
         if (request.getParameter("agreement").equalsIgnoreCase("accept")) {
-            System.out.println("in if -----");
+           // System.out.println("in if -----");
             rd = getServletContext().getRequestDispatcher("/profile.jsp");
         } else {
-            System.out.println("in if --else---");
+            //System.out.println("in if --else---");
             rd = getServletContext().getRequestDispatcher("/login.jsp");
         }
         rd.forward(request, response);
